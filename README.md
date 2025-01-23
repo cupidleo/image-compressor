@@ -41,18 +41,7 @@ http://localhost:5000
 
 ## 部署说明
 
-### 方式一：使用 PythonAnywhere
-
-1. 注册 PythonAnywhere 账号
-2. 创建 Web 应用
-3. 上传项目文件
-4. 安装依赖：
-```bash
-pip install -r requirements.txt
-```
-5. 配置 WSGI 文件，将入口指向 app.py
-
-### 方式二：使用 Vercel
+### 方式一：使用 Vercel
 
 1. Fork 本项目到 GitHub
 2. 注册 Vercel 账号
@@ -60,7 +49,7 @@ pip install -r requirements.txt
 4. 选择 Python 框架
 5. 部署完成后即可访问
 
-### 方式三：使用云服务器
+### 方式二：使用云服务器
 
 1. 安装依赖：
 ```bash
@@ -104,4 +93,4 @@ gunicorn -w 4 -b 127.0.0.1:5000 app:app
 
 ## 许可证
 
-MIT License 
+MIT License
