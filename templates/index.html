@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片批量压缩工具</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>图片批量压缩工具</h1>
+        <div class="upload-container" id="uploadArea">
+            <div class="upload-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+                    <path fill="none" d="M0 0h24v24H0z"/>
+                    <path d="M12 12.586l4.243 4.242-1.415 1.415L13 16.415V22h-2v-5.585l-1.828 1.828-1.415-1.415L12 12.586zM12 2a7.001 7.001 0 0 1 6.954 6.194 5.5 5.5 0 0 1-.953 10.784v-2.014a3.5 3.5 0 1 0-1.112-6.91 5 5 0 1 0-9.777 0 3.5 3.5 0 0 0-1.292 6.88l.18.03v2.014a5.5 5.5 0 0 1-.954-10.784A7 7 0 0 1 12 2z" fill="currentColor"/>
+                </svg>
+            </div>
+            <div class="upload-text">
+                <p>点击或拖拽图片到这里上传</p>
+                <p class="upload-hint">支持批量上传，最多10张图片</p>
+            </div>
+            <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
+        </div>
+        <div id="previewArea" class="preview-container" style="display: none;">
+            <h3>已选择的图片：<span id="selectedCount">0</span>/10</h3>
+            <div id="imageList" class="image-list"></div>
+            <div class="compression-stats">
+                <div class="stat-item">
+                    <span>总原始大小：</span>
+                    <span id="totalOriginalSize">0 KB</span>
+                </div>
+                <div class="stat-item">
+                    <span>预计压缩后：</span>
+                    <span id="totalCompressedSize">0 KB</span>
+                </div>
+                <div class="stat-item">
+                    <span>预计节省：</span>
+                    <span id="totalSaved">0 KB</span>
+                </div>
+            </div>
+            <div class="button-group">
+                <button id="compressBtn" class="primary-button">开始压缩</button>
+                <button id="clearBtn" class="secondary-button">清除选择</button>
+            </div>
+        </div>
+        <div id="progressArea" class="progress-container" style="display: none;">
+            <div class="progress-bar">
+                <div id="progressBar" class="progress"></div>
+            </div>
+            <p id="progressText">正在压缩...</p>
+        </div>
+        <div id="resultArea" class="result-container" style="display: none;">
+            <h3>压缩结果</h3>
+            <div id="resultList" class="result-list"></div>
+            <div class="total-saved">
+                <span>总共节省：</span>
+                <span id="finalSaved">0 KB</span>
+                <span>（压缩率：<span id="compressionRate">0</span>%）</span>
+            </div>
+            <button id="downloadBtn" class="primary-button">下载全部</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+</body>
+</html> 
