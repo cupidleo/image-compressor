@@ -6,8 +6,8 @@ import os
 import zipfile
 
 app = Flask(__name__, 
-    template_folder='templates',  # 设置模板文件夹路径
-    static_folder='static'        # 设置静态文件夹路径
+    template_folder='../templates',  # 设置模板文件夹路径
+    static_folder='../static'        # 设置静态文件夹路径
 )
 CORS(app)
 
@@ -108,12 +108,4 @@ def compress():
         
     except Exception as e:
         print(f"压缩过程中出错: {str(e)}")
-        return {'error': f'压缩失败: {str(e)}'}, 500
-
-# Vercel 需要的处理函数
-def handler(event, context):
-    return app(event, context)
-
-if __name__ == '__main__':
-    # 本地开发时使用
-    app.run(debug=True, host='127.0.0.1', port=5000) 
+        return {'error': f'压缩失败: {str(e)}'}, 500 
